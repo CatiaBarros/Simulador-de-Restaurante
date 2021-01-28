@@ -225,9 +225,9 @@
             // parar relogio
             pararRelogio = true;
             Swal.fire({
-                text: desc,
+                html: desc,
                 showCancelButton: doisBotoes,
-                confirmButtonHTML: 'Continuar',
+                confirmButtonText: 'Continuar',
                 cancelButtonText: acao
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -241,9 +241,9 @@
                 } else {
 
                     Swal.fire({
-                        text: secondDesc,
+                        html: secondDesc,
                         showCancelButton: false,
-                        confirmButtonHTML: 'Continuar',
+                        confirmButtonTEXT: 'Continuar',
                     }).then((result) => {
 
                         // Atualiza os valores
