@@ -90,7 +90,7 @@
 
 
         // A função aumentarDia vai chamada de 1 em 1 segundo (1000ms). Podes aumentar ou diminuir consoante  velocidade que precisares que os dias andem
-        setInterval(aumentarDia, 1000);
+        setInterval(aumentarDia, 100);
 
         // Data inicial
         var data = new Date("February 1, 2020");
@@ -153,7 +153,7 @@
                     }
 
                     if (data.getTime() == new Date("Mach 11, 2020").getTime()) {
-                        lancarPopUp(" A Organização Mundial de Saúde declarou a Covid-19 como pandemia.", null, false, null, -1, -1, -1, null);
+                        lancarPopUp(" A Organização Mundial de Saúde declarou a Covid-19 como pandemia.", null, false, null, 0, 0, 0, "A Organização Mundial de Saúde declarou a Covid-19 como pandemia.",0,0,0);
                     }
 
                     // Quando chega a uma determinada data
@@ -174,17 +174,36 @@
                         null,
                         -10, 
                         -10, 
-                        -1, 
-                        "As pessoas começam a ter medo, diminui o número de clientes.");
+                        0, 
+                        "As pessoas começam a ter medo, diminui o número de clientes.", -10,-10,0);
                     }
                     if(data.getTime() == new Date("March 2, 2020").getTime()) {
-                        lancarPopUp("Foi detetado o primeiro caso de Covid-19 em Portugal. Aconselha-se o uso de material de protenção. Pretende aquirir?", "Comprar material", true, "Comprar", -10,0,0, "Comprar materal de protenção individual.");
+                        lancarPopUp("Foi detetado o primeiro caso de Covid-19 em Portugal. Aconselha-se o uso de material de protenção. Pretende aquirir?", "Comprar material", true, "Comprar", -10,0,0, "Comprar materal de protenção individual.", 0,-10,-10);
                      }
                      
                      if (data.getTime() == new Date("March 18, 2020").getTime()) {
-                        lancarPopUp("Declarado Estado de Emergência. Os restaurantes têm de encerrar. Os estabelecimentos de restauração e similares podem manter a respetiva atividade, se os seus titulares assim o decidirem, para efeitos exclusivos de confeção destinada a consumo fora do estabelecimento ou entrega no domicílio, diretamente ou através de intermediário. Para efeitos do disposto no número anterior, os estabelecimentos de restauração e similares ficam dispensados de licença para confeção destinada a consumo fora do estabelecimento ou entrega no domicílio e podem determinar aos seus trabalhadores a participação nas respetivas atividades, ainda que as mesmas não integrassem o objeto dos respetivos contratos de trabalho.", " Pode recorrer a takeway", true, "Recorrer", -10,0,0, "Comprar materal de protenção individual.");
+                        lancarPopUp("Declarado Estado de Emergência. Os restaurantes têm de encerrar. <p> Os estabelecimentos de restauração e similares podem manter a respetiva atividade, se os seus titulares assim o decidirem, para efeitos exclusivos de confeção destinada a consumo fora do estabelecimento ou entrega no domicílio, diretamente ou através de intermediário. Para efeitos do disposto no número anterior, os estabelecimentos de restauração e similares ficam dispensados de licença para confeção destinada a consumo fora do estabelecimento ou entrega no domicílio e podem determinar aos seus trabalhadores a participação nas respetivas atividades, ainda que as mesmas não integrassem o objeto dos respetivos contratos de trabalho. </p>", " Pode recorrer a takeway", true, "Recorrer", -10,0,0, "Declarado Estado de Emergência. Os restaurantes encerraram.", -40,0,-10);
                      }
 
+                     if(data.getTime() == new Date("May 18, 2020").getTime()) {
+                        lancarPopUp("Os restuarantes voltam a abrir. É necessário respeitar algumas medidas: assegurar a elaboração de um plano de contingência específico. limitar a capacidade para 50%. Higienizar o espaço. Deseja cumprir todas as medidas?", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "Comprar materal de protenção individual.", +20,-20,-10);
+                     }
+
+                    if(data.getTime() == new Date("September 15, 2020").getTime()) {
+                        lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "Comprar materal de protenção individual.", -30,-20,-10);
+                     }
+
+                if(data.getTime() == new Date("October 30, 2020").getTime()) {
+                        lancarPopUp("No próximo fim-de-semana será imposto a proibição de circulação entre conselhos. Menos clientes vão visitiar o seu estabelecimento", "Proibição de circulação.", null, false, null, 0, 0, 0, "Proibição de circulação entre conselhos",-10,0,0);
+                     }
+
+                if(data.getTime() == new Date("November 14, 2020").getTime()) {
+                        lancarPopUp("O conselho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-10,0,0);
+                     }
+                     if(data.getTime() == new Date("November 14, 2020").getTime()) {
+                        lancarPopUp("O conselho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-10,0,0);
+                     }
+                    
 
                     // COMECAR A INCREMENTAR CASOS
                     if (data.getTime() > new Date("March 1, 2020").getTime()) {
@@ -199,7 +218,7 @@
             }
         }
 
-        function lancarPopUp(desc, secondDesc, doisBotoes, acao, dinheiro, higiene, reputacao, elementCronologia) {
+        function lancarPopUp(desc, secondDesc, doisBotoes, acao, dinheiro, higiene, reputacao, elementCronologia,dinheiroContinuar, higieneContinuar, reputacaoContinuar ) {
 
 
             //alert(elementCronologia);
@@ -208,13 +227,13 @@
             Swal.fire({
                 text: desc,
                 showCancelButton: doisBotoes,
-                confirmButtonText: 'Continuar',
+                confirmButtonHTML: 'Continuar',
                 cancelButtonText: acao
             }).then((result) => {
                 if (result.isConfirmed) {
-                     atualizarBarra("dinheiro", dinheiro);
-                        atualizarBarra("higiene", higiene);
-                        atualizarBarra("reputacao", reputacao);
+                     atualizarBarra("dinheiro", dinheiroContinuar);
+                        atualizarBarra("higiene", higieneContinuar);
+                        atualizarBarra("reputacao", reputacaoContinuar);
                         adicionarElementCronologia(elementCronologia) 
 
                     // Continua  
@@ -224,7 +243,7 @@
                     Swal.fire({
                         text: secondDesc,
                         showCancelButton: false,
-                        confirmButtonText: 'Continuar',
+                        confirmButtonHTML: 'Continuar',
                     }).then((result) => {
 
                         // Atualiza os valores
