@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Simulador restaurante</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="row my-5">
+
+            <div class="col-8">
+
+              
+
+                <h3 id="data"></h3>
+
+
+                <img id="imagem" src="restaurante.png" class="img-fluid p-5" />
+
+            </div>
+
+            <div class="col-4">
+
+                <h5>Dinheiro</h5>
+                <div class="progress">
+                    <div id="dinheiro" class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+                <h5>Higiene</h5>
+                <div class="progress">
+                    <div id="higiene" class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+                <h5>Reputação</h5>
+                <div class="progress">
+                    <div id="reputacao" class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+
+                <hr />
+
+                <h5>
+                    Casos confirmados: <span id="numCasos">0</span>
+                </h5>
+                <h5>
+                    Surtos confirmados no restaurante: <span id="numSurtos">0</span>
+                </h5>
+
+                <hr />
+
+                <div id="resumo">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+
+        // A função aumentarDia vai chamada de 1 em 1 segundo (1000ms). Podes aumentar ou diminuir consoante  velocidade que precisares que os dias andem
+        setInterval(aumentarDia, 1000);
+
+        // Data inicial
+        var data = new Date("February 1, 2020");
+        document.getElementById("data").innerHTML = data.toLocaleDateString();
+
+
+        var dinheiro = 100;
+        var higiene = 100;
+        var reputacao = 100;
+
+        document.getElementById("dinheiro").style.width = dinheiro + '%';
+        document.getElementById("higiene").style.width = higiene + '%';
+        document.getElementById("reputacao").style.width = reputacao + '%';
+
+
+        var casosConfirmados = 0;
+        var surtosConfirmados = 0;
+
+        var cronolgoia = [];
+        // Para adicionar basta chamares a funcao adicionarElementCronologia
+
+        var pararRelogio = false;
+
+        // CSV Stuff
+        var csvIndex = 1;
+        var csvInfo = [];
+
+        function aumentarDia() {
+
+            // so incrementa se o relogio nao tiver parado
+            if (pararRelogio == false) {
+
+                // Condicao de paragem, se o dinheiro chegar ao fim
+                if (dinheiro == 0) {
+
+                    pararRelogio = true;
+
+                    Swal.fire({
+                        title: 'Ficaste sem dinheiro',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'Recomeçar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload();
+                        }
+                    })
+
+                } else {
+                    // Incrementa o dia 
+                    data.setDate(data.getDate() + 1)
+
+                    // 
+                    document.getElementById("data").innerHTML = data.toLocaleDateString();
+
+
+                    // Mudar  imagem
+                    if (data.getTime() == new Date("May 18, 2020").getTime()) {
+                        document.getElementById("imagem").src = "restaurante2.png";
+                    }
+
+                    if (data.getTime() == new Date("Mach 11, 2020").getTime()) {
+                        lancarPopUp(" A Organização Mundial de Saúde declarou a Covid-19 como pandemia.", null, false, null, -1, -1, -1, null);
+                    }
+
+                    // Quando chega a uma determinada data
+                    // A ideia é meter tantos ifs quanto os acontecimentos que queres
+                    if (data.getTime() == new Date("February 15, 2020").getTime()) {
+                        // descricao do acontecimento
+                        // segundo descricao do acontecimento (compraste material.... )
+                        // false se queres so botao continuar
+                        // true se queres 2 botoes (continuar e comprar/contratar etccc)
+                        // valor dinheiro a atualizar
+                        // valor de higiene a atualizar
+                        // valor de reputacao a atualizar
+                        // Se nao queres alterar nada, metes -1
+                        // ocorrencia 
+                        lancarPopUp("Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", "Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", false, -10, -10, -1, "As pessoas começam a ter medo, diminui o número de clientes.");
+                    }
+                    if(data.getTime() == new Date("March 2, 2020").getTime()) {
+                        lancarPopUp("Foi detetado o primeiro caso de Covid-19 em Portugal. Aconselha-se o uso de material de protenção. Pretende aquirir?", "Comprar material", true, "Comprar", -10,0,0, "Comprar materal de protenção individual.")
+
+
+                    // COMECAR A INCREMENTAR CASOS
+                    if (data.getTime() > new Date("March 1, 2020").getTime()) {
+
+                        document.getElementById("numCasos").innerHTML = csvInfo[csvIndex];
+                        csvIndex ++;
+                    }
+
+                }
+
+
+            }
+        }
+
+        function lancarPopUp(desc, secondDesc, doisBotoes, acao, dinheiro, higiene, reputacao, elementCronologia) {
+
+            // parar relogio
+            pararRelogio = true;
+            Swal.fire({
+                text: desc,
+                showCancelButton: doisBotoes,
+                confirmButtonText: 'Continuar',
+                cancelButtonText: acao
+            }).then((result) => {
+                if (result.isConfirmed) {
+                     atualizarBarra("dinheiro", dinheiro);
+                        atualizarBarra("higiene", higiene);
+                        atualizarBarra("reputacao", reputacao);
+                        adicionarElementCronologia(elementCronologia) 
+
+                    // Continua  
+                    pararRelogio = false;
+                } else {
+
+                    Swal.fire({
+                        text: secondDesc,
+                        showCancelButton: false,
+                        confirmButtonText: 'Continuar',
+                    }).then((result) => {
+
+                        // Atualiza os valores
+                        atualizarBarra("dinheiro", dinheiro);
+                        atualizarBarra("higiene", higiene);
+                        atualizarBarra("reputacao", reputacao);
+                        adicionarElementCronologia(elementCronologia)
+                        // Continuar os dias
+                        pararRelogio = false;
+
+                    })
+
+
+                }
+            })
+        }
+
+        // Funcao que atualiza os parametros
+        function atualizarBarra(id, valor) {
+
+            // Se o valor receibo for -1 nao atualiza
+            if (valor != -1) {
+
+                if (id == 'dinheiro') {
+                    dinheiro += valor;
+                    document.getElementById(id).style.width = dinheiro + '%';
+                }
+
+                if (id == 'higiene') {
+                    document.getElementById(id).style.width = higiene + '%';
+                }
+
+                if (id == 'reputacao') {
+                    document.getElementById(id).style.width = reputacao + '%';
+                }
+            }
+
+        }
+
+        // Funcao que adiciona uma ocorrencia
+        function adicionarElementCronologia(element) {
+            cronolgoia.push(element);
+
+            cronolgoia.forEach(elemento => {
+                document.getElementById("resumo").innerHTML = "<h4>" + elemento + '</h4>';
+            });
+
+        }
+
+        function adicionarCasos(casos) {
+            // Incrementa o numero de casos
+            casosConfirmados = + casos;
+            document.getElementById("numCasos").innerHTML = casosConfirmados;
+        }
+
+        function adicionarSurtos(surtos) {
+            // Incrementa o numero de casos
+            surtosConfirmados = + surtos;
+            document.getElementById("numSurtos").innerHTML = surtosConfirmados;
+        }
+
+
+
+        $.ajax({
+            url: 'Covid.csv',
+            dataType: 'text',
+        }).done(successFunction);
+
+
+        function successFunction(data) {
+
+            var allRows = data.split(/\r?\n|\r/);
+
+            for (var i = 0; i < allRows.length; i++) {
+                csvInfo.push(allRows[i].split(';')[1])
+            }
+
+            console.log(csvInfo);
+
+        }
+
+
+
+    </script>
+
+    <style>
+        h5 {
+            margin-top: 20px;
+        }
+
+        .swal2-styled.swal2-confirm {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #cfa900 !important;
+            color: #fff;
+            font-size: 1.0625em;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+body {
+  background-color:  #F1F1F1;
+}
+
+h1 {
+  color: black;
+  font-family: "Lora", serif;
+  font-size: 48px;
+  text-align: center;
+}
+h2 {
+	color:black;
+	font-family: "Lora",serif;
+	font-size:36px;
+	text-align: center;
+}
+
+a,.autor {
+	text-align: center;
+	color: black;
+
+
+}
+
+a:hover {
+	color:#FFCC33;
+}
+.button {
+  background-color: #FFCC33; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ margin-left: auto;
+  margin-right: auto;  
+  cursor: pointer;
+
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-left: auto;
+  margin-right: auto; 
+}
