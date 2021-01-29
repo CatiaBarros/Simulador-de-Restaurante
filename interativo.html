@@ -133,7 +133,7 @@
                     pararRelogio = true;
 
                     Swal.fire({
-                        title: 'Ficaste sem dinheiro',
+                        title: 'O teu restaurante foi à falência.',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'Recomeçar'
@@ -172,37 +172,34 @@
                         // valor de reputacao a atualizar
                         // Se nao queres alterar nada, metes -1
                         // ocorrencia 
-                        lancarPopUp("Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", 
-                        "Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", 
-                        false, 
-                        null,-20, -10, 0, "As pessoas começam a ter medo, diminui o número de clientes.", -20,-10,0);
+                        lancarPopUp("Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", "As pessoas começam a ter medo, diminui o número de clientes.", false, null,-20, -10, 0, "As pessoas começam a ter medo, diminui o número de clientes.", -20,-10,0);
                     }
                     if(data.getTime() == new Date("March 2, 2020").getTime()) {
                         lancarPopUp("Foi detetado o primeiro caso de Covid-19 em Portugal. Aconselha-se o uso de material de protenção. Pretende aquirir?", "Comprar material", true, "Comprar", -20,0,0, "Comprar material de protenção individual.", 0,-10,-10);
                      }
                      
                      if(data.getTime() == new Date("March 18, 2020").getTime()) {
-                        lancarPopUp("Declarado Estado de Emergência. Os restaurantes têm de encerrar.  <br> Os estabelecimentos de restauração e similares podem manter a respetiva atividade, se os seus titulares assim o decidirem, para efeitos exclusivos de confeção destinada a consumo fora do estabelecimento ou entrega no domicílio, diretamente ou através de intermediário. Para efeitos do disposto no número anterior, os estabelecimentos de restauração e similares ficam dispensados de licença para confeção destinada a consumo fora do estabelecimento ou entrega no domicílio e podem determinar aos seus trabalhadores a participação nas respetivas atividades, ainda que as mesmas não integrassem o objeto dos respetivos contratos de trabalho. <br> Pretende recorrer ao takeway?", "Pode recorrer a takeway", true, "Recorrer", -20,0,0, "Declarado Estado de Emergência. Os restaurantes encerraram.", -40,0,-10);
+                        lancarPopUp("Declarado Estado de Emergência. Os restaurantes têm de encerrar.  <br> Os estabelecimentos de restauração e similares podem manter a respetiva atividade, se os seus titulares assim o decidirem, para efeitos exclusivos de confeção destinada a consumo fora do estabelecimento ou entrega no domicílio, diretamente ou através de intermediário. Para efeitos do disposto no número anterior, os estabelecimentos de restauração e similares ficam dispensados de licença para confeção destinada a consumo fora do estabelecimento ou entrega no domicílio e podem determinar aos seus trabalhadores a participação nas respetivas atividades, ainda que as mesmas não integrassem o objeto dos respetivos contratos de trabalho. <br> Pretende recorrer ao takeway?", "Declarado Estado de Emergência. Os restaurantes encerraram.", true, "Recorrer", -20,0,0, "Declarado Estado de Emergência. Os restaurantes encerraram.", -40,0,-10);
                      }
 
                      if(data.getTime() == new Date("May 18, 2020").getTime()) {
-                        lancarPopUp("Os restaurantes voltam a abrir. É necessário respeitar algumas medidas: <br> assegurar a elaboração de um plano de contingência específico; <br> limitar a capacidade para 50%; <br>Higienizar o espaço. <br> Deseja cumprir todas as medidas?", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "Reabertura dos restaurantes.", +20,-20,-10);
+                        lancarPopUp("Os restaurantes voltam a abrir. É necessário respeitar algumas medidas: <br> assegurar a elaboração de um plano de contingência específico; <br> limitar a capacidade para 50%; <br>Higienizar o espaço. <br> Deseja cumprir todas as medidas?", "Reabertura dos restaurantes", true, "Cumprir", +10 ,+10,+10, "Reabertura dos restaurantes.", +20,-20,-10);
                      }
 
                    if(data.getTime() == new Date("June 7, 2020").getTime()) {
                     adicionarSurtos(1);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Encerrar", true, "Encerrar", -20, -10, -10, "Primeiro surto com origem no seu restaurante.", -10,-30, -20);
+                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -20, -10, -10, "Primeiro surto com origem no seu restaurante.", -10,-30, -20);
                     }
 
 
 
                    if(data.getTime() == new Date("July 20, 2020").getTime()) {
                     adicionarSurtos(2);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Encerrar", true, "Encerrar", -20, -10, -10, "Segundo surto com origem no seu restaurante.", -10,-30, -20);
+                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -20, -10, -10, "Segundo surto com origem no seu restaurante.", -10,-30, -20);
                     }
 
                     if(data.getTime() == new Date("September 15, 2020").getTime()) {
-                        lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio. <br> Deseja cumprir as medidas?", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "", -30,-20,-10);
+                        lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio. <br> Deseja cumprir as medidas?", "Novas regras aplicadas à restauração.", true, "Cumprir", +10 ,+10,+10, "", -30,-20,-10);
                      }
 
                 if(data.getTime() == new Date("October 30, 2020").getTime()) {
@@ -210,23 +207,23 @@
                      }
 
                 if(data.getTime() == new Date("November 14, 2020").getTime()) {
-                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", "Encerrar às 15h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-20,0,0);
+                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", "Encerrar às 13h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-20,0,0);
                      }
 
                      if(data.getTime() == new Date("November 20, 2020").getTime()) {
                     adicionarSurtos(3);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Encerrar", true, "Encerrar", -20, -10, -10, "Terceiro surto com origem no seu restaurante.", -10,-30, -20);
+                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -20, -10, -10, "Terceiro surto com origem no seu restaurante.", -10,-30, -20);
                     }
                      if(data.getTime() == new Date("November 30, 2020").getTime()) {
                         lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Nas vésperas de feriado vai ter de encerar Às 15h.", "Encerrar às 15h.", null, false, null, 0, 0, 0, "Encerrar às 15h.",-10,0,0);
                      }
                     
                     if(data.getTime() == new Date("December 20, 2020").getTime()) {
-                        lancarPopUp("Devido ao Natal haverá um alivio nas restrições aplicadas. Pode manter o negócio aberto.", "Alivio de restrições",null, false, null, 0,0,0, "Alivio restrições", -10, -20,0);
+                        lancarPopUp("Devido ao Natal haverá um alivio nas restrições aplicadas. Pode manter o negócio aberto.", "Alivio de restrições no Natal.",null, false, null, 0,0,0, "Alivio restrições do Natal.", -10, -20,0);
                      }
                      if(data.getTime() == new Date("January 7, 2021").getTime()) {
-                    adicionarSurtos(3);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Encerrar", true, "Encerrar", -40, -10, -10, "Quarto surto com origem no seu restaurante.", -40,-30, -20);
+                    adicionarSurtos(4);
+                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -40, -10, -10, "Quarto surto com origem no seu restaurante.", -40,-30, -20);
                     }
 
                     // COMECAR A INCREMENTAR CASOS
@@ -372,4 +369,3 @@
 </body>
 
 </html>
-
