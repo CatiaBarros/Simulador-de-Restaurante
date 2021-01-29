@@ -142,6 +142,7 @@
                             location.reload();
                         }
                     })
+                    
 
                 } else {
                     // Incrementa o dia 
@@ -188,22 +189,22 @@
 
                    if(data.getTime() == new Date("June 7, 2020").getTime()) {
                     adicionarSurtos(1);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -20, -10, -10, "Primeiro surto com origem no seu restaurante.", -10,-30, -20);
+                    lancarPopUp("Um surto teve início no seu restuarante. A DGS recomenda que encerre o restuarante. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -30, -10, -10, "Primeiro surto com origem no seu restaurante.", -20,-30, -20);
                     }
 
 
 
                    if(data.getTime() == new Date("July 20, 2020").getTime()) {
                     adicionarSurtos(2);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -20, -10, -10, "Segundo surto com origem no seu restaurante.", -10,-30, -20);
+                    lancarPopUp("Um surto teve início no seu restuarante. A DGS recomenda que encerre o restuarante. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -30, -10, -10, "Segundo surto com origem no seu restaurante.", -20,-30, -20);
                     }
 
                     if(data.getTime() == new Date("September 15, 2020").getTime()) {
-                        lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio. <br> Deseja cumprir as medidas?", "Novas regras aplicadas à restauração.", true, "Cumprir", +10 ,+10,+10, "", -30,-20,-10);
+                        lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio. <br> Deseja cumprir as medidas?", "Novas regras aplicadas à restauração.", true, "Cumprir", -10 ,+10,+10, "Novas regras aplicadas à restauração", -10,-20,-10);
                      }
 
                 if(data.getTime() == new Date("October 30, 2020").getTime()) {
-                        lancarPopUp("No próximo fim-de-semana será imposto a proibição de circulação entre concelhos. Menos clientes vão visitiar o seu estabelecimento", "Proibição de circulação.", null, false, null, 0, 0, 0, "Proibição de circulação entre conselhos",-10,0,0);
+                        lancarPopUp("No próximo fim-de-semana será imposto a proibição de circulação entre concelhos. Menos clientes vão visitiar o seu estabelecimento", "Proibição de circulação.", null, false, -10, 0, 0, "Proibição de circulação entre conselhos",-20,0,0);
                      }
 
                 if(data.getTime() == new Date("November 14, 2020").getTime()) {
@@ -212,18 +213,18 @@
 
                      if(data.getTime() == new Date("November 20, 2020").getTime()) {
                     adicionarSurtos(3);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -20, -10, -10, "Terceiro surto com origem no seu restaurante.", -10,-30, -20);
+                    lancarPopUp("Um surto teve início no seu restuarante. A DGS recomenda que encerre o restuarante. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -30, -10, -10, "Terceiro surto com origem no seu restaurante.", -20,-30, -20);
                     }
                      if(data.getTime() == new Date("November 30, 2020").getTime()) {
-                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Nas vésperas de feriado vai ter de encerar Às 15h.", "Encerrar às 15h.", null, false, null, 0, 0, 0, "Encerrar às 15h.",-10,0,0);
+                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Nas vésperas de feriado vai ter de encerar Às 15h.", "Encerrar às 15h.", null, false, null, -20, 0, 0, "Encerrar às 15h.",0,0,0);
                      }
                     
                     if(data.getTime() == new Date("December 20, 2020").getTime()) {
-                        lancarPopUp("Devido ao Natal haverá um alivio nas restrições aplicadas. Pode manter o negócio aberto.", "Alivio de restrições no Natal.",null, false, null, 0,0,0, "Alivio restrições do Natal.", -10, -20,0);
+                        lancarPopUp("Devido ao Natal haverá um alivio nas restrições aplicadas. Pode manter o negócio aberto.", "Alivio de restrições no Natal.",null, false, null, 0,0,0, "Alivio restrições do Natal.", -20, -20,0);
                      }
                      if(data.getTime() == new Date("January 7, 2021").getTime()) {
                     adicionarSurtos(4);
-                    lancarPopUp("Um surto teve início no seu restuarante. O estabelecimento encerrou. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -40, -10, -10, "Quarto surto com origem no seu restaurante.", -40,-30, -20);
+                    lancarPopUp("Um surto teve início no seu restuarante. A DGS recomenda que encerre o restuarante. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -50, -10, -10, "Quarto surto com origem no seu restaurante.", -50,-30, -20);
                     }
 
                     // COMECAR A INCREMENTAR CASOS
