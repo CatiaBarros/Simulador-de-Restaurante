@@ -175,6 +175,8 @@
                         // ocorrencia 
                         lancarPopUp("Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", "As pessoas começam a ter medo, diminui o número de clientes.", false, null,-20, -10, 0, "As pessoas começam a ter medo, diminui o número de clientes.", -20,-10,0);
                     }
+
+                                     
                     if(data.getTime() == new Date("March 2, 2020").getTime()) {
                         lancarPopUp("Foi detetado o primeiro caso de Covid-19 em Portugal. Aconselha-se o uso de material de protenção. Pretende aquirir?", "Comprar material", true, "Comprar", -20,0,0, "Comprar material de protenção individual.", 0,-10,-10);
                      }
@@ -203,12 +205,13 @@
                         lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio. <br> Deseja cumprir as medidas?", "Novas regras aplicadas à restauração.", true, "Cumprir", -10 ,+10,+10, "Novas regras aplicadas à restauração", -10,-20,-10);
                      }
 
-                if(data.getTime() == new Date("October 30, 2020").getTime()) {
-                        lancarPopUp("No próximo fim-de-semana será imposto a proibição de circulação entre concelhos. Menos clientes vão visitiar o seu estabelecimento", "Proibição de circulação.", null, false, -10, 0, 0, "Proibição de circulação entre conselhos",-20,0,0);
+                 if(data.getTime() == new Date("October 30, 2020").getTime()) {
+                        lancarPopUp("No próximo fim-de-semana será imposto a proibição de circulação entre concelhos. Menos clientes vão visitiar o seu estabelecimento.", "Proibição de circulação.", false, null, -10, 0, 0, "Proibição de circulação entre conselhos",-10,0,0);
+
                      }
 
                 if(data.getTime() == new Date("November 14, 2020").getTime()) {
-                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", "Encerrar às 13h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-20,0,0);
+                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", "Encerrar às 13h.", false, null, -20, 0, 0, "Encerrar às 13h,",-20,0,0);
                      }
 
                      if(data.getTime() == new Date("November 20, 2020").getTime()) {
@@ -216,11 +219,11 @@
                     lancarPopUp("Um surto teve início no seu restuarante. A DGS recomenda que encerre o restuarante. Deseja encerrar o estabelecimento?", "Surto com origem no seu restaurante.", true, "Encerrar", -30, -10, -10, "Terceiro surto com origem no seu restaurante.", -20,-30, -20);
                     }
                      if(data.getTime() == new Date("November 30, 2020").getTime()) {
-                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Nas vésperas de feriado vai ter de encerar Às 15h.", "Encerrar às 15h.", null, false, null, -20, 0, 0, "Encerrar às 15h.",0,0,0);
+                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Nas vésperas de feriado vai ter de encerar Às 15h.", "Encerrar às 15h.", false, null, -20, 0, 0, "Encerrar às 15h.",-20,0,0);
                      }
                     
                     if(data.getTime() == new Date("December 20, 2020").getTime()) {
-                        lancarPopUp("Devido ao Natal haverá um alivio nas restrições aplicadas. Pode manter o negócio aberto.", "Alivio de restrições no Natal.",null, false, null, 0,0,0, "Alivio restrições do Natal.", -20, -20,0);
+                        lancarPopUp("Devido ao Natal haverá um alivio nas restrições aplicadas. Pode manter o negócio aberto.", "Alivio de restrições no Natal.", false, null, 10,0,0, "Alivio restrições do Natal.", 10,0,0);
                      }
                      if(data.getTime() == new Date("January 7, 2021").getTime()) {
                     adicionarSurtos(4);
@@ -370,3 +373,4 @@
 </body>
 
 </html>
+
