@@ -175,14 +175,10 @@
                         lancarPopUp("Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", 
                         "Um novo  vírus começa a chegar à Europa. O vírus foi descoberto na China. As pessoas começam a ter medo, diminui o número de clientes.", 
                         false, 
-                        null,
-                        -10, 
-                        -10, 
-                        0, 
-                        "As pessoas começam a ter medo, diminui o número de clientes.", -10,-10,0);
+                        null,-10, -10, 0, "As pessoas começam a ter medo, diminui o número de clientes.", -10,-10,0);
                     }
                     if(data.getTime() == new Date("March 2, 2020").getTime()) {
-                        lancarPopUp("Foi detetado o primeiro caso de Covid-19 em Portugal. Aconselha-se o uso de material de protenção. Pretende aquirir?", "Comprar material", true, "Comprar", -10,0,0, "Comprar materal de protenção individual.", 0,-10,-10);
+                        lancarPopUp("Foi detetado o primeiro caso de Covid-19 em Portugal. Aconselha-se o uso de material de protenção. Pretende aquirir?", "Comprar material", true, "Comprar", -10,0,0, "Comprar material de protenção individual.", 0,-10,-10);
                      }
                      
                      if (data.getTime() == new Date("March 18, 2020").getTime()) {
@@ -190,24 +186,27 @@
                      }
 
                      if(data.getTime() == new Date("May 18, 2020").getTime()) {
-                        lancarPopUp("Os restuarantes voltam a abrir. É necessário respeitar algumas medidas: assegurar a elaboração de um plano de contingência específico. limitar a capacidade para 50%. Higienizar o espaço. Deseja cumprir todas as medidas?", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "Comprar materal de protenção individual.", +20,-20,-10);
+                        lancarPopUp("Os restaurantes voltam a abrir. É necessário respeitar algumas medidas: <br> assegurar a elaboração de um plano de contingência específico; <br> limitar a capacidade para 50%; <br>Higienizar o espaço. <br> Deseja cumprir todas as medidas?", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "Reabertura dos restaurantes.", +20,-20,-10);
                      }
 
                     if(data.getTime() == new Date("September 15, 2020").getTime()) {
-                        lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "Comprar materal de protenção individual.", -30,-20,-10);
+                        lancarPopUp("Novas regras aplicadas à restauração; Os restaurantes podem funcionar além das 20h00 para refeições no local (tanto no interior dos estabelecimentos, como nas esplanadas licenciadas), em serviço de take-away ou entrega ao domicílio", "Cumprir medidas", true, "Cumprir", +10 ,+10,+10, "", -30,-20,-10);
                      }
 
                 if(data.getTime() == new Date("October 30, 2020").getTime()) {
-                        lancarPopUp("No próximo fim-de-semana será imposto a proibição de circulação entre conselhos. Menos clientes vão visitiar o seu estabelecimento", "Proibição de circulação.", null, false, null, 0, 0, 0, "Proibição de circulação entre conselhos",-10,0,0);
+                        lancarPopUp("No próximo fim-de-semana será imposto a proibição de circulação entre concelhos. Menos clientes vão visitiar o seu estabelecimento", "Proibição de circulação.", null, false, null, 0, 0, 0, "Proibição de circulação entre conselhos",-10,0,0);
                      }
 
                 if(data.getTime() == new Date("November 14, 2020").getTime()) {
-                        lancarPopUp("O conselho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-10,0,0);
+                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-20,0,0);
                      }
-                     if(data.getTime() == new Date("November 14, 2020").getTime()) {
-                        lancarPopUp("O conselho em que o seu restaurante está encontra-se no nível extremamente elevado. Vai ter de encerrar às 13h.", null, false, null, 0, 0, 0, "Encerrar às 13h,",-10,0,0);
+                     if(data.getTime() == new Date("November 30, 2020").getTime()) {
+                        lancarPopUp("O concelho em que o seu restaurante está encontra-se no nível extremamente elevado. Nas vésperas de feriado vai ter de encerar Às 15h.", null, false, null, 0, 0, 0, "Encerrar às 15h,",-10,0,0);
                      }
                     
+                    if(data.getTime() == new Date("December 20, 2020").getTime()) {
+                        lancarPopUp("Devido ao Natal haverá um alivio nas restrições aplicadas. Pode manter o negócio aberto.", "Alivio de restrições", false, 0,0,0, "Alivio restrições", -10, -10,0);
+                     }
 
                     // COMECAR A INCREMENTAR CASOS
                     if (data.getTime() > new Date("March 1, 2020").getTime()) {
@@ -269,7 +268,7 @@
         function atualizarBarra(id, valor) {
 
             // Se o valor receibo for -1 nao atualiza
-            if (valor != -1) {
+            if (valor != 0) {
 
                 if (id == 'dinheiro') {
                     dinheiro += valor;
@@ -277,10 +276,12 @@
                 }
 
                 if (id == 'higiene') {
+                    higiene += valor;
                     document.getElementById(id).style.width = higiene + '%';
                 }
 
                 if (id == 'reputacao') {
+                    reputacao *= valor;
                     document.getElementById(id).style.width = reputacao + '%';
                 }
             }
@@ -350,3 +351,4 @@
 </body>
 
 </html>
+
